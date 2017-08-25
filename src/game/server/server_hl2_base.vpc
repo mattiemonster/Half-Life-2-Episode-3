@@ -5,13 +5,14 @@
 //-----------------------------------------------------------------------------
 
 $Include "$SRCDIR\game\server\server_base.vpc"
+$Include "$SRCDIR\game\server\server_deferred_base.vpc"
 
 $Configuration
 {
 	$Compiler
 	{
 		$AdditionalIncludeDirectories	"$BASE;$SRCDIR\game\shared\hl2;.\hl2"
-		$PreprocessorDefinitions		"$BASE;SWARM_DLL;HL2_DLL;USES_SAVERESTORE"
+		$PreprocessorDefinitions		"$BASE;SWARM_DLL;HL2_DLL;USES_SAVERESTORE;HL2_EPISODIC;DEFERRED"
 	}
 }
 
@@ -150,7 +151,7 @@ $Project
 			$File	"hl2\item_suit.cpp"
 			$File	"hl2\look_door.cpp"
 			$File	"hl2\monster_dummy.cpp"
-			$File	"hl2\npc_alyx.cpp"
+			//$File	"hl2\npc_alyx.cpp"
 			$File	"hl2\npc_alyx.h"
 			$File	"hl2\npc_antlion.cpp"
 			$File	"hl2\npc_antlion.h"
@@ -260,6 +261,27 @@ $Project
 			$File	"hl2\weapon_smg1.cpp"
 			$File	"hl2\weapon_stunstick.cpp"
 			$File	"hl2\weapon_stunstick.h"
+			
+			$Folder "Episodic"
+		{
+			$File	"episodic/ai_behavior_alyx_injured.cpp"
+			$File	"episodic/ai_behavior_passenger_companion.cpp"
+			$File	"episodic/ai_behavior_passenger_zombie.cpp"
+			$File	"episodic/grenade_hopwire.cpp"
+			$File	"episodic/npc_advisor.cpp"
+			$File	"episodic/npc_combine_cannon.cpp"
+			$File	"episodic/npc_hunter.cpp"
+			$File	"episodic/npc_magnusson.cpp"
+			$File	"episodic/npc_puppet.cpp"
+			$File	"episodic/prop_scalable.cpp"
+			$File	"episodic/vehicle_jeep_episodic.cpp"
+			$File	"episodic/weapon_hopwire.cpp"
+			$File	"episodic/weapon_oldmanharpoon.cpp"
+			$File	"episodic/weapon_striderbuster.cpp"
+			$File	"hl2/npc_alyx_episodic.cpp"
+			$File	"hl2/grenade_spit.cpp"
+			$File	"ai_behavior_passenger.cpp"
+		}
 
 			$Folder	"Unused"
 			{

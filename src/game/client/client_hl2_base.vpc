@@ -7,13 +7,15 @@
 $Macro SRCDIR		"..\.."
 
 $Include "$SRCDIR\game\client\client_base.vpc"
+$Include "$SRCDIR\game\client\client_deferred_base.vpc"
+$Include "$SRCDIR\game\client\client_shadereditor_base.vpc"
 
 $Configuration
 {
 	$Compiler
 	{
 		$AdditionalIncludeDirectories	".\hl2;.\hl2\elements;$SRCDIR\game\shared\hl2;$SRCDIR\game\client\hl2\gameui;$SRCDIR\game\client\hl2\vgui;$SRCDIR\game\client\gameui;$BASE"
-		$PreprocessorDefinitions		"$BASE;SWARM_DLL;HL2_CLIENT_DLL;GAMEUI_EMBEDDED;GAMEUI_EXPORTS"
+		$PreprocessorDefinitions		"$BASE;SWARM_DLL;HL2_CLIENT_DLL;GAMEUI_EMBEDDED;GAMEUI_EXPORTS;HL2_EPISODIC;DEFERRED;SHADEREDITOR"
 	}
 }
 
@@ -199,6 +201,21 @@ $Project
 			$File	"hl2\hud_zoom.cpp"
 			$File	"hl2\shieldproxy.cpp"
 			$File 	"episodic\c_vort_charge_token.cpp"
+			
+		}
+		
+		$Folder "Episodic"
+		{
+			$File	"episodic/c_npc_advisor.cpp"
+			$File	"episodic/c_npc_puppet.cpp"
+			$File	"episodic/c_prop_coreball.cpp"
+			$File	"episodic/c_prop_scalable.cpp"
+			$File	"episodic/c_vehicle_jeep_episodic.cpp"
+			$File	"episodic/c_vort_charge_token.cpp"
+			$File	"episodic/c_weapon_hopwire.cpp"
+			$File	"episodic/episodic_screenspaceeffects.cpp"
+			$File	"episodic/flesh_internal_material_proxy.cpp"
+			$File	"hl2/hud_radar.cpp"
 		}
 	}
 	
